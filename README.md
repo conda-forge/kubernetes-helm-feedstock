@@ -14,14 +14,16 @@ Summary: Helm is a package manager for kubernetes
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/kubernetes-helm-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/kubernetes-helm-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/kubernetes-helm-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/kubernetes-helm-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/kubernetes-helm-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/kubernetes-helm-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/kubernetes-helm-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/kubernetes-helm-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/kubernetes-helm-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/kubernetes-helm-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/kubernetes-helm-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/kubernetes-helm-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kubernetes-helm/badges/version.svg)](https://anaconda.org/conda-forge/kubernetes-helm)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kubernetes-helm/badges/downloads.svg)](https://anaconda.org/conda-forge/kubernetes-helm)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-kubernetes--helm-green.svg)](https://anaconda.org/conda-forge/kubernetes-helm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/kubernetes-helm.svg)](https://anaconda.org/conda-forge/kubernetes-helm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/kubernetes-helm.svg)](https://anaconda.org/conda-forge/kubernetes-helm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/kubernetes-helm.svg)](https://anaconda.org/conda-forge/kubernetes-helm) |
 
 Installing kubernetes-helm
 ==========================
