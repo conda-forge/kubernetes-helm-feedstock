@@ -1,8 +1,8 @@
 {% set name = "kubernetes-helm" %}
-{% set version = "2.9.0" %}
+{% set version = "2.9.1" %}
 
-{% set sha256 = "72fb2beff588d77e6b75a12b9732079c636500869de73416b07c4826a96a201c" %}
-{% set sha256_win64 = "4db0f889051f18fa9b65d1ba8172153a3a6dc1e0efa640865b290ee352552d92" %}
+{% set sha256 = "2fee31764117024d1cc4f597d23791c60feef7c3ceedd143cfdbbafca7a7e126" %}
+{% set sha256_win64 = "e8626ad091b23284cbbe30851f665868292e7b788052981cc4c4a585808d4834" %}
 
 
 package:
