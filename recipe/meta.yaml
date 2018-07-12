@@ -19,19 +19,20 @@ source:
 
 build:
   skip: True  # [win32]
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - make  # [not win]
+    - {{ compiler('c') }}
+  host:
     - go 1.9.*  # [not win]
     - git  # [not win]
-    - make  # [not win]
     - mercurial  # [not win]
-    - toolchain  # [not win]
 
 test:
   commands:
-    - helm --help 
+    - helm --help
 
     # ugly hack because cloud-controller-manager is not a dynamic executable
     - conda inspect linkages -p $PREFIX {{ name|lower }}  # [not win]
