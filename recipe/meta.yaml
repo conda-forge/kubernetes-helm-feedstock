@@ -1,5 +1,5 @@
 {% set name = "kubernetes-helm" %}
-{% set version = "2.10.0" %}
+{% set version = "2.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -9,9 +9,8 @@ source:
   url: https://github.com/kubernetes/helm/archive/v{{ version }}.tar.gz  # [not win]
   url: https://storage.googleapis.com/{{ name }}/helm-v{{ version }}-windows-amd64.tar.gz  # [win]
 
-  fn: {{ name }}-{{ version }}.tar.gz
-  sha256: 544511a814a0aefc4f74e196d96bea7930d83df059551d0b57c28439f6df4137  # [not win]
-  sha256: 9bd32dae4b4631480782904dd79a6c942803a4e1c8974072d39aed2a74fca86c  # [win]
+  sha256: eee403cc1e05ab2eb1c6802eb7ecc4a5c544cb5971b7ee828c0b8d60fe061eb0  # [not win]
+  sha256: 8347dc5ea12d937eb793ed438ea3274f40639144abdc8b071715937aad8a7616  # [win]
 
 build:
   skip: True  # [win32]
@@ -19,20 +18,17 @@ build:
 
 requirements:
   build:
-    - make  # [not win]
+    - {{ compiler('go') }}  # [not win]
     - {{ compiler('c') }}
+    - make  # [not win]
   host:
-    - go 1.9.*  # [not win]
     - git  # [not win]
     - mercurial  # [not win]
 
 test:
   commands:
     - helm --help
-
-    # ugly hack because cloud-controller-manager is not a dynamic executable
-    - conda inspect linkages -p $PREFIX {{ name|lower }}  # [not win]
-    - conda inspect objects -p $PREFIX {{ name|lower }}  # [osx]
+    - tiller -version  # [linux]
 
 about:
   home: https://www.helm.sh
