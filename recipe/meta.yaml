@@ -10,29 +10,37 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/helm/helm
-  git_tag: v{{ version }}
+  - folder: {{ pkg_src }}
+    git_url: https://github.com/helm/helm
+    git_tag: v{{ version }}
 
 build:
   number: 1000
   script:
     - pushd {{ pkg_src }}
-    - go install -v cmd/...
+    - make bootstrap build test-unit
+    - mkdir {{ target_gobin }}
+    - cp bin/helm{{ target_goexe }} {{ target_gobin }}
+    - cp bin/tiller{{ target_goexe }} {{ target_gobin }}
 
 requirements:
   build:
-    - {{ compiler('go') }}  # [not win]
+    - {{ compiler('go') }}
+    - make
+    - m2-make  # [win]
+    - go-glide
+    - go-gox
 
 test:
   commands:
     - helm --help
-    - tiller -version  # [linux]
+    - tiller -version
 
 about:
   home: https://www.helm.sh
   license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE
+  license_file: {{ pkg_src }}/LICENSE
   summary: Helm is a package manager for kubernetes
   doc_url: https://docs.helm.sh
   dev_url: https://github.com/helm/helm
