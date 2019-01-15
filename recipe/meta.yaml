@@ -1,29 +1,27 @@
-{% set name = "kubernetes-helm" %}
+{% set goname = "k8s.io/helm" %}
 {% set version = "2.12.2" %}
 
+
+{% set name = goname.split('/')[-1] %}
+{% set pkg_src = ('src/'+goname).replace("/", "\\" if win else "/") %}
+
 package:
-  name: {{ name|lower }}
+  name: kubernetes-{{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/kubernetes/helm/archive/v{{ version }}.tar.gz  # [not win]
-  url: https://storage.googleapis.com/{{ name }}/helm-v{{ version }}-windows-amd64.tar.gz  # [win]
-
-  sha256: 66151497b1c293df3b3d3bd848ef39457a78085b7f417f47e2599cff604b5651  # [not win]
-  sha256: 54dc234a5a1063554d26763c473f74635fa93b8114742748d4149681ee98ca6d  # [win]
+  git_url: https://github.com/helm/helm
+  git_tag: v{{ version }}
 
 build:
-  skip: True  # [win32]
   number: 1000
+  script:
+    - pushd {{ pkg_src }}
+    - go install -v cmd/...
 
 requirements:
   build:
     - {{ compiler('go') }}  # [not win]
-    - {{ compiler('c') }}
-    - make  # [not win]
-  host:
-    - git  # [not win]
-    - mercurial  # [not win]
 
 test:
   commands:
@@ -37,7 +35,7 @@ about:
   license_file: LICENSE
   summary: Helm is a package manager for kubernetes
   doc_url: https://docs.helm.sh
-  dev_url: https://github.com/kubernetes/helm
+  dev_url: https://github.com/helm/helm
 
 extra:
   recipe-maintainers:
