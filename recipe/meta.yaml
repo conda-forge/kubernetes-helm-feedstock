@@ -17,7 +17,7 @@ source:
     sha256: fc810c306526197dce1d43068bc6385dad13b9d86e912bfd79fc06fe9d275a3d  # [win]
 
 build:
-  number: 1000
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - make bootstrap build test-unit  # [unix]
