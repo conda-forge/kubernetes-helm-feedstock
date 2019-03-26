@@ -2,3 +2,9 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+go_compiler:
+- go-nocgo
+target_gobin:
+- '%PREFIX%\bin\'
+target_goexe:
+- .exe
