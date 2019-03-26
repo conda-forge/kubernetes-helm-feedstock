@@ -8,8 +8,7 @@ docker_image:
 - condaforge/linux-anvil-comp7
 go_compiler:
 - go-nocgo
-zip_keys:
-- - channel_sources
-  - channel_targets
-  - docker_image
-  - build_number_decrement
+target_gobin:
+- ${PREFIX}/bin/
+target_goexe:
+- ''

@@ -14,7 +14,7 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
 - '10.9'
-zip_keys:
-- - channel_sources
-  - channel_targets
-  - build_number_decrement
+target_gobin:
+- ${PREFIX}/bin/
+target_goexe:
+- ''
