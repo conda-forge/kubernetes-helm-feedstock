@@ -1,5 +1,5 @@
 {% set goname = "k8s.io/helm" %}
-{% set version = "2.13.1" %}
+{% set version = "2.14.1" %}
 
 
 {% set name = goname.split('/')[-1] %}
@@ -14,7 +14,7 @@ source:
     git_url: https://github.com/helm/helm  # [unix]
     git_tag: v{{ version }}                # [unix]
     url: https://storage.googleapis.com/kubernetes-{{ name }}/{{ name }}-v{{ version }}-windows-amd64.tar.gz  # [win]
-    sha256: fc810c306526197dce1d43068bc6385dad13b9d86e912bfd79fc06fe9d275a3d  # [win]
+    sha256: 604780d3fabeb27e7ab7a30c6e29ce64bcd2203501ea35e5231c97965b0255a0  # [win]
 
 build:
   number: 0
