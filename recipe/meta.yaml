@@ -1,5 +1,5 @@
 {% set goname = "k8s.io/helm" %}
-{% set version = "2.14.1" %}
+{% set version = "3.0.0" %}
 
 
 {% set name = goname.split('/')[-1] %}
@@ -13,8 +13,8 @@ source:
   - folder: {{ pkg_src }}
     git_url: https://github.com/helm/helm  # [unix]
     git_tag: v{{ version }}                # [unix]
-    url: https://storage.googleapis.com/kubernetes-{{ name }}/{{ name }}-v{{ version }}-windows-amd64.tar.gz  # [win]
-    sha256: 604780d3fabeb27e7ab7a30c6e29ce64bcd2203501ea35e5231c97965b0255a0  # [win]
+    url: https://get.helm.sh/{{ name }}-v{{ version }}-windows-amd64.zip  # [win]
+    sha256: ea3da9092214a11ed3a21a0b7bbd738c25b63cdefbb90f1c921aab7bbcce62c6  # [win]
 
 build:
   number: 0
@@ -36,7 +36,6 @@ requirements:
 test:
   commands:
     - helm --help
-    - tiller -version
 
 about:
   home: https://www.helm.sh
