@@ -25,7 +25,6 @@ build:
 
     - mkdir {{ target_gobin }}
     - cp helm{{ target_goexe }} {{ target_gobin }}
-    - cp tiller{{ target_goexe }} {{ target_gobin }}
 
 requirements:
   build:
