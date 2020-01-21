@@ -21,7 +21,7 @@ build:
   script:
     - pushd {{ pkg_src }}
     - make bootstrap build test-unit  # [linux]
-    - USER=osxuser make bootstrap build test-unit  # [os x]
+    - USER=osxuser make bootstrap build test-unit  # [osx]
     - pushd bin  # [unix]
 
     - mkdir {{ target_gobin }}
