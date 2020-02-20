@@ -20,7 +20,7 @@ build:
   number: 0
   script:
     - pushd {{ pkg_src }}
-    - make bootstrap build test-unit  # [unix]
+    - make build test-unit  # [unix]
     - pushd bin  # [unix]
 
     - mkdir {{ target_gobin }}
