@@ -1,9 +1,11 @@
+c_compiler:
+- vs2008
+cgo_compiler:
+- go-cgo
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-go_compiler:
-- go-nocgo
 target_gobin:
 - '%PREFIX%\bin\'
 target_goexe:
