@@ -28,7 +28,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go') }}
+    - {{ compiler('cgo') }}
     - go-glide
     - go-gox
 
