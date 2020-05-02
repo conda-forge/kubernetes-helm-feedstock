@@ -32,7 +32,7 @@ requirements:
     - {{ compiler('cgo') }}
     - go-glide
     - go-gox
-
+    - m2-coreutils  # [win]
 test:
   commands:
     - helm --help
