@@ -20,6 +20,7 @@ build:
   number: 0
   script:
     - pushd {{ pkg_src }}
+    - export USER=$(id -u -n)  # [osx]
     - make build test-unit  # [unix]
     - pushd bin  # [unix]
 
