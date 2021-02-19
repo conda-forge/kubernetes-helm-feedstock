@@ -29,7 +29,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go') }} >=1.13
+    - {{ compiler('go') }} >=1.14
     - go-gox
     - m2-coreutils  # [win]
 test:
