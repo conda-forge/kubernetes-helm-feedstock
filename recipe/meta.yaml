@@ -1,5 +1,5 @@
 {% set goname = "k8s.io/helm" %}
-{% set version = "3.4.1" %}
+{% set version = "3.5.2" %}
 
 
 {% set name = goname.split('/')[-1] %}
@@ -14,7 +14,7 @@ source:
     git_url: https://github.com/helm/helm  # [unix]
     git_tag: v{{ version }}                # [unix]
     url: https://get.helm.sh/{{ name }}-v{{ version }}-windows-amd64.zip  # [win]
-    sha256: 67f19f370b1f47d71cbd05c288d7adf627921e7a6dc57c6e713c389569ad1c34  # [win]
+    sha256: 079711eeadd3276da0d946a116f4dc08d58b015ca1874d7b3f3cd633e079589e  # [win]
 
 build:
   number: 0
@@ -29,7 +29,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go') }} >=1.14
+    - {{ compiler('go') }} >=1.15.7
     - go-gox
     - m2-coreutils  # [win]
 test:
