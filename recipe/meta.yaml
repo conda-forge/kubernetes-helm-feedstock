@@ -17,7 +17,7 @@ source:
     sha256: 079711eeadd3276da0d946a116f4dc08d58b015ca1874d7b3f3cd633e079589e  # [win]
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - export USER=$(id -u -n)  # [osx]
@@ -47,5 +47,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - sodre
     - dhirschfeld
