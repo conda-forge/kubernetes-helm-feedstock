@@ -30,6 +30,7 @@ requirements:
   build:
     - {{ compiler('go') }} >=1.15.7
     - go-gox
+    - make  # [unix]
     - m2-coreutils  # [win]
 test:
   commands:
