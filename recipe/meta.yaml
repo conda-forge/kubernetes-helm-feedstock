@@ -20,7 +20,8 @@ build:
   script:
     - pushd {{ pkg_src }}
     - export USER=$(id -u -n)  # [osx]
-    - make build test-unit  # [unix]
+    - make build  # [unix]
+    - make test-unit  # [unix and not arm64]
     - pushd bin  # [unix]
 
     - mkdir {{ target_gobin }}
