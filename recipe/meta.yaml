@@ -16,6 +16,7 @@ source:
     sha256: 7cdc1342bc1863b6d5ce695fbef4d3b0d65c7c5bcef6ec6adf8fc9aa53821262  # [win]
 
 build:
+  skip: true  # [osx]
   number: 0
   script:
     - pushd {{ pkg_src }}
