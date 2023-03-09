@@ -1,11 +1,26 @@
+About kubernetes-helm-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kubernetes-helm-feedstock/blob/main/LICENSE.txt)
+
 About kubernetes-helm
-=====================
+---------------------
 
 Home: https://www.helm.sh
 
 Package license: Apache-2.0
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kubernetes-helm-feedstock/blob/main/LICENSE.txt)
+Summary: Helm is a package manager for kubernetes
+
+Development: https://github.com/helm/helm
+
+Documentation: https://docs.helm.sh
+About kubernetes-helm
+---------------------
+
+Home: https://www.helm.sh
+
+Package license: Apache-2.0
 
 Summary: Helm is a package manager for kubernetes
 
