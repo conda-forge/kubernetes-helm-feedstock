@@ -1,7 +1,7 @@
 {% set name = "helm" %}
 {% set goname = "k8s.io/" + name %}
 
-{% set version = "3.11.2" %}
+{% set version = "3.11.3" %}
 {% set pkg_src = ('src/'+goname).replace("/", "\\" if win else "/") %}
 
 package:
@@ -11,7 +11,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://github.com/helm/helm/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: c81a83eaa6a1a00cbcdbc9c39adfe18778d2bd5286fb94208f222e449c1c1c05  # [not win]
+    sha256: ae146d2a90600c6958bc801213daef467237cf475e26ab3f476dfb8e0d9549b7  # [not win]
     url: https://get.helm.sh/helm-v{{ version }}-windows-amd64.zip  # [win]
     sha256: bca0c5b99a0e6621032f1767e61a1723b86c5f4ef565fa58be8be6d619a4276a  # [win]
 
