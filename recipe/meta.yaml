@@ -11,7 +11,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://get.helm.sh/helm-v{{ version }}-windows-amd64.zip  # [win]
-    sha256: d56bc2c2d47cbfcfb99071c0ccc78c55b48d2319f317783ec42a206be89a7d0b  # [win]
+    sha256: 8989f94407d31da2697a7354fba5f5c436b27ea193f76de6f1d37a51898a97a1  # [win]
     url: https://github.com/helm/helm/archive/v{{ version }}.tar.gz  # [not win]
     sha256: d56bc2c2d47cbfcfb99071c0ccc78c55b48d2319f317783ec42a206be89a7d0b  # [not win]
 
