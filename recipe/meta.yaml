@@ -17,8 +17,7 @@ source:
 
 
 build:
-  skip: true  # [osx]
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - export USER=$(id -u -n)  # [osx]
