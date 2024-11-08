@@ -1,14 +1,18 @@
 ace:
 - 8.0.1
+cdt_name:
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 go_compiler:
 - go-nocgo
 target_gobin:
-- '%LIBRARY_PREFIX%\bin\'
+- ${PREFIX}/bin/
 target_goexe:
-- .exe
+- ''
 target_platform:
-- win-64
+- linux-ppc64le

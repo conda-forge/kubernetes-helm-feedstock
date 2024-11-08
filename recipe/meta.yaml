@@ -2,48 +2,51 @@
 {% set goname = "k8s.io/" + name %}
 
 {% set version = "3.16.2" %}
-{% set pkg_src = ('src/'+goname).replace("/", "\\" if win else "/") %}
+{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
 
 package:
   name: kubernetes-{{ name|lower }}
-  version: {{ version }}
+  version: {{ version|replace("-", "_") }}
 
 source:
-  - url: https://get.helm.sh/helm-v{{ version }}-windows-amd64.zip  # [win]
-    sha256: 57821dd47d5728912e14000ee62262680e9039e8d05e18342cc010d5ac7908d7  # [win]
-    folder: {{ pkg_src }}  # [win]
-  - url: https://github.com/helm/helm/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: c9d8360dcd720c47ca13ded8739d693f25e0f12234054c8ebbf027a5ceafe76d  # [not win]
-    folder: {{ pkg_src }}  # [not win]
-
+  - url: https://github.com/helm/helm/archive/v{{ version }}.tar.gz
+    sha256: c9d8360dcd720c47ca13ded8739d693f25e0f12234054c8ebbf027a5ceafe76d
+    folder: {{ pkg_src }}
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
-    - export USER=$(id -u -n)  # [osx]
-    - make build  # [unix]
-    - make test-unit  # [unix and not arm64]
-    - pushd bin  # [unix]
-
+    - export USER=$(id -u -n)                                           # [osx]
+    - make build
+    - make test-unit                                                    # [unix and not arm64]
+    - go-licenses save ./cmd/helm --save_path ../../../license-files
+    - pushd bin                                                         # [unix]
+    - cd bin                                                            # [win]
     - mkdir {{ target_gobin }}
-    - cp helm{{ target_goexe }} {{ target_gobin }}
+    - cp helm {{ target_gobin }}helm{{ target_goexe }}
+    # Clear cache to avoid excessive file not removable warnings
+    - chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)           # [unix]
 
 requirements:
   build:
-    - {{ compiler('go') }} >=1.15.7
+    - {{ compiler('go') }}
+    - go-licenses
     - go-gox
-    - make  # [unix]
-    - m2-coreutils  # [win]
+    - make
+
 test:
   commands:
     - helm --help
+    - helm version
 
 about:
   home: https://www.helm.sh
   license: Apache-2.0
   license_family: Apache
-  license_file: {{ pkg_src }}/LICENSE
+  license_file:
+    - {{ pkg_src }}/LICENSE
+    - license-files/
   summary: Helm is a package manager for kubernetes
   doc_url: https://docs.helm.sh
   dev_url: https://github.com/helm/helm
@@ -52,3 +55,4 @@ extra:
   recipe-maintainers:
     - sodre
     - dhirschfeld
+    - dbast

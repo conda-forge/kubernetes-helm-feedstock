@@ -3,23 +3,6 @@ About kubernetes-helm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kubernetes-helm-feedstock/blob/main/LICENSE.txt)
 
-
-About kubernetes-helm
----------------------
-
-Home: https://www.helm.sh
-
-Package license: Apache-2.0
-
-Summary: Helm is a package manager for kubernetes
-
-Development: https://github.com/helm/helm
-
-Documentation: https://docs.helm.sh
-
-About kubernetes-helm
----------------------
-
 Home: https://www.helm.sh
 
 Package license: Apache-2.0
@@ -52,6 +35,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3988&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kubernetes-helm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3988&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kubernetes-helm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3988&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kubernetes-helm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -204,6 +201,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@dbast](https://github.com/dbast/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@sodre](https://github.com/sodre/)
 
