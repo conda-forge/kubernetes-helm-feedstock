@@ -7,7 +7,7 @@ channel_targets:
 go_compiler:
 - go-nocgo
 target_gobin:
-- '%PREFIX%\bin\'
+- '%LIBRARY_PREFIX%\bin\'
 target_goexe:
 - .exe
 target_platform:
