@@ -17,14 +17,14 @@ build:
   number: 1
   script:
     - pushd {{ pkg_src }}
-    - export USER=$(id -u -n)  # [osx]
+    - export USER=$(id -u -n)                                           # [osx]
     - make build
-    - make test-unit  # [unix and not arm64]
+    - make test-unit                                                    # [unix and not arm64]
     - go-licenses save ./cmd/helm --save_path ../../../license-files
     - pushd bin                                                         # [unix]
     - cd bin                                                            # [win]
     - mkdir {{ target_gobin }}
-    - cp helm{{ target_goexe }} {{ target_gobin }}
+    - cp helm {{ target_gobin }}helm{{ target_goexe }}
     # Clear cache to avoid excessive file not removable warnings
     - chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)           # [unix]
 
