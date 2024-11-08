@@ -20,7 +20,7 @@ build:
     - export USER=$(id -u -n)  # [osx]
     - make build
     - make test-unit  # [unix and not arm64]
-    - go-licenses save ./cmd/helm --save_path ../library_licenses
+    - go-licenses save ./cmd/helm --save_path ../license-files
     - pushd bin
 
     - mkdir {{ target_gobin }}
