@@ -12,10 +12,10 @@ source:
     folder: {{ pkg_src }}
 
 build:
-  number: 1
+  number: 2
   script:
     - pushd {{ pkg_src }}
-    - make build
+    - make build BINARY_VERSION=v{{ version }}
     - make test-unit                                                    # [unix and not arm64]
     - go-licenses save ./cmd/helm --save_path ../../../license-files
     - pushd bin
