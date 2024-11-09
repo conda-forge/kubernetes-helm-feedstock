@@ -1,6 +1,6 @@
 {% set name = "helm" %}
 {% set version = "3.16.2" %}
-{% set pkg_src = os.sep.join("src", "k8s.io", name) %}
+{% set pkg_src = os.sep.join(["src", "k8s.io", name]) %}
 
 package:
   name: kubernetes-{{ name|lower }}
