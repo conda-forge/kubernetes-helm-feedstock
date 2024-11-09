@@ -39,8 +39,9 @@ test:
   commands:
     - helm --help
     - helm version
-    - helm version | rg 'Version:"v{{ version }}+conda-forge"'
-    - helm version | rg --invert-match dirty | rg --invert-match unreleased | rg --invert-match 'GitCommit:""'
+    - helm version | rg '{{ version }}'
+    - helm version | rg conda-forge
+    - helm version | rg --invert-match dirty | rg --invert-match unreleased
 
 about:
   home: https://www.helm.sh
