@@ -1,5 +1,5 @@
 {% set name = "helm" %}
-{% set version = "3.16.3" %}
+{% set version = "3.16.4" %}
 {% set pkg_src = os.sep.join(["src", "k8s.io", name]) %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/helm/helm/archive/v{{ version }}.tar.gz
-    sha256: d476949802e2293620a4947f1fdd9006b88e4120fe6d0fafaef14b79badb72ee
+    sha256: 428a0ed06136cc2018ffe283f5e4f7fba4d2a37bc566cd0cf5aa550c4985f5bb
     patches:
       - 0001-Allow-setting-VERSION_METADATA-GIT_DIRTY.patch
     folder: {{ pkg_src }}
