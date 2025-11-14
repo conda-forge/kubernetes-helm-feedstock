@@ -18,7 +18,7 @@ build:
   script:
     - pushd {{ pkg_src }}
     - make build BINARY_VERSION=v{{ version }} VERSION_METADATA=conda-forge GIT_DIRTY=clean
-    - make test-unit                                                    # [unix and not arm64]
+    - make test-unit                                                    # [unix and not (arm64 or ppc64le)]
     - go-licenses save ./cmd/helm --save_path ../../../license-files
     - pushd bin
     - mkdir {{ target_gobin }}
