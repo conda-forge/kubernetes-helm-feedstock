@@ -14,7 +14,7 @@ source:
     folder: {{ pkg_src }}
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - make build BINARY_VERSION=v{{ version }} VERSION_METADATA=conda-forge GIT_DIRTY=clean
