@@ -5,4 +5,4 @@ channel_targets:
 go_compiler:
 - go-nocgo
 target_platform:
-- win-64
+- win-arm64

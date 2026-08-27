@@ -3,7 +3,7 @@ About kubernetes-helm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kubernetes-helm-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.helm.sh
+Home: https://www.helm.sh/
 
 Package license: Apache-2.0
 
@@ -11,7 +11,7 @@ Summary: Helm is a package manager for kubernetes
 
 Development: https://github.com/helm/helm
 
-Documentation: https://docs.helm.sh
+Documentation: https://docs.helm.sh/
 
 Current build status
 ====================
@@ -42,6 +42,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3988&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kubernetes-helm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3988&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kubernetes-helm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>

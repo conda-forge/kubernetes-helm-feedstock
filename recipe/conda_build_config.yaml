@@ -1,6 +1,0 @@
-target_goexe:
-  -                            # [unix]
-  - .exe                       # [win]
-target_gobin:
-  - '${PREFIX}/bin/'           # [unix]
-  - '%LIBRARY_PREFIX%\bin\'    # [win]
