@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: kubernetes-helm
-  version: "4.3.1"
+  version: "4.3.2"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/helm/helm/archive/v${{ version }}.tar.gz
-  sha256: e7b803b6a248c18aea067dbccacaf651c29946db75d05fb23f318ff2f15961c6
+  sha256: 7d848fa8880cca40f9548e46255d38e3e25259847fe81775c5a09af0c3dda2e1
   patches:
     - 0001-Allow-setting-VERSION_METADATA-GIT_DIRTY.patch
   target_directory: src
